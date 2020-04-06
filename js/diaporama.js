@@ -2,6 +2,7 @@
 window.onload = () => {
     //Récupération noeud correspondant au diaporama
     let diaporama = document.querySelector("header>section");
+    // console.log(diaporama)
     let divGlobe = document.querySelector("header>section>div");
 
     // //Récupération noeud dot-circle et parent
@@ -20,15 +21,13 @@ window.onload = () => {
     //Initialisation collection éléments img
     let slides = document.querySelectorAll("header>section>img");
     let compt = 0;
+    setInterval(defilerSlide, 1000) ;
 
-    setInterval(defilerSlide, 1000);
-}
+    function defilerSlide() {
+        slides[compt % 3].style.display = "none";
+        compt++;
+        slides[compt % 3].style.display = "initial";
+    }
 
-function defilerSlide() {
+}// Fin windows.onload
 
-    slides[compt % 3].style.display = "none";
-    compt++;
-    slides[compt % 3].style.display = "initial";
-
-
-}

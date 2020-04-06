@@ -24,6 +24,26 @@ body header section img {
   width: 100%;
 }
 
+body header section .moins {
+  font-size: 75px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+body header section .plus {
+  font-size: 75px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 body header section div {
   position: absolute;
   left: 50%;

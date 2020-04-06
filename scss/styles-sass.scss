@@ -23,6 +23,24 @@ body {
                 width: 100%;
             }
 
+            .moins {
+                font-size: 75px;
+                color: white;
+                position: absolute;
+                top: 50%;
+                left: 30px;
+                transform: translateY(-50%);
+            }
+
+            .plus {
+                font-size: 75px;
+                color: white;
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                transform: translateY(-50%);
+            }
+
             div {
                 position: absolute;
                 left: 50%;
@@ -46,12 +64,17 @@ body {
                     @keyframes tourne {
 
                         from {
-                            -ms-transform: rotateZ(0); /* IE 9 */
-                            transform: rotateZ(0); /* Standard syntax */
+                            -ms-transform: rotateZ(0);
+                            /* IE 9 */
+                            transform: rotateZ(0);
+                            /* Standard syntax */
                         }
-                        to { 
-                            -ms-transform: rotateZ(360deg); /* IE 9 */
-                            transform: rotateZ(360deg); /* Standard syntax */
+
+                        to {
+                            -ms-transform: rotateZ(360deg);
+                            /* IE 9 */
+                            transform: rotateZ(360deg);
+                            /* Standard syntax */
                         }
                     }
 
@@ -59,15 +82,18 @@ body {
                         0% {
                             color: red;
                         }
+
                         33% {
-                            color:green;
+                            color: green;
                         }
+
                         66% {
-                            color:blue;
+                            color: blue;
                         }
+
                         100% {
                             color: red;
-                        }                        
+                        }
                     }
 
 
@@ -601,11 +627,11 @@ body {
             text-decoration: none;
             color: $noir08;
 
-            &[href*='facebook.com']{
+            &[href*='facebook.com'] {
                 color: #3b5998;
             }
 
-            &[href*='twitter.com']{
+            &[href*='twitter.com'] {
                 color: #1da1f2
             }
 
