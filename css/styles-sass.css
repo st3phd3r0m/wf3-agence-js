@@ -24,7 +24,7 @@ body header section img {
   width: 100%;
 }
 
-body header section .moins {
+body header section .la-chevron-left {
   font-size: 75px;
   color: white;
   position: absolute;
@@ -34,7 +34,7 @@ body header section .moins {
           transform: translateY(-50%);
 }
 
-body header section .plus {
+body header section .la-chevron-right {
   font-size: 75px;
   color: white;
   position: absolute;
@@ -234,6 +234,27 @@ body header nav select {
     width: 50%;
     margin: auto;
   }
+}
+
+body > a {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 95%;
+  left: 93%;
+  z-index: 1;
+}
+
+body > a .la-angle-double-up {
+  font-size: 4rem;
+  text-decoration: none;
+  color: rgba(128, 128, 128, 0.534);
+  border: 1px solid rgba(128, 128, 128, 0.534);
+  border-radius: 7px;
+}
+
+body > a .la-angle-double-up:hover {
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.534);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.534);
 }
 
 body main section {

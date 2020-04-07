@@ -9,10 +9,10 @@ window.onload = () => {
     let period = 1000;
     let interVal = setInterval(defiler, period);
 
-    let plus = document.querySelector(".plus");
+    let plus = document.querySelector(".la-chevron-right");
     plus.addEventListener("click", defiler);
 
-    let moins = document.querySelector(".moins");
+    let moins = document.querySelector(".la-chevron-left");
     moins.addEventListener("click", defileMoins);
 
     // Récupération noeud dot-circle et parent
@@ -27,17 +27,20 @@ window.onload = () => {
 
     //Ecouteur d'évenement pour interrompre le diaporama 
     let img = document.querySelector("header>section>img");
-    img.addEventListener("mouseenter", function () {
+    img.addEventListener("mouseover", function () {
         clearInterval(interVal);
     });
 
     //Ecouteur d'évenement pour relancer le diaporama
-    img.addEventListener("mouseleave", function () {
+    img.addEventListener("mouseout", function () {
         interVal = setInterval(defiler, period);
     });
 
 } // Fin windows.onload
 
+/**
+ * Fait avancer le diaporama d'une image
+ */
 function defiler() {
     //Collection des éléments ronds
     let circles = document.querySelectorAll("section div:nth-of-type(2)>i");
@@ -61,6 +64,10 @@ function defiler() {
     circles[pointeur].classList.add("la-dot-circle");
 }
 
+
+/**
+ * Faire reculer le diaporama d'une image
+ */
 function defileMoins() {
     //Collection des éléments ronds
     let circles = document.querySelectorAll("section div:nth-of-type(2)>i");
@@ -73,7 +80,7 @@ function defileMoins() {
     // Si le pointeur dépasse le début du tableau
     if (pointeur == -1) {
         // on réinitialise le pointeur
-        pointeur = 2;
+        pointeur = images.length-1;
     }
     //Récupération noeud correspondant au diaporama : on va chercher l'image
     let diaporama = document.querySelector("header>section>img");
