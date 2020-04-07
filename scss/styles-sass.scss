@@ -238,7 +238,6 @@ body {
         top : 95%;
         left: 93%;
         z-index: 1;
-        // vertical-align: bottom;
         .la-angle-double-up{
             font-size: 4rem;
             text-decoration: none;
@@ -592,27 +591,23 @@ body {
                     color: white;
                 }
 
-                div {
-                    display: flex;
-                }
 
                 label {
-                    flex: 1;
-                    background-color: white;
-                    height: 4rem;
                     margin-top: 2px;
                     margin-bottom: 2px;
-                    color: $noir04;
-                    text-transform: uppercase;
-                    text-align: center;
                 }
 
                 input,
                 textarea {
-                    flex: 4;
+                    box-sizing: border-box;
+                    width:100%;
                     border: none;
                     margin-top: 2px;
                     margin-bottom: 2px;
+                    padding:20px;
+                    text-transform: uppercase;
+                    color: $noir04;
+
                 }
 
                 button {

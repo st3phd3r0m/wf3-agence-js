@@ -27,6 +27,7 @@ window.onload = () => {
     //Diaporama manuel : image de droite
     let plus = document.querySelector(".la-chevron-right");
     plus.addEventListener("click", defiler);
+
     //Diaporama manuel : image de gauche
     let moins = document.querySelector(".la-chevron-left");
     moins.addEventListener("click", defileMoins);
@@ -46,15 +47,14 @@ function miseAJourCercle() {
 }
 
 
+
 /**
  * Fait avancer le diaporama d'une image
  */
 function defiler() {
-    //Collection des éléments ronds
-    let circles = document.querySelectorAll("section div:nth-of-type(2)>i");
+
     //Avant que ne s'incrémente le pointeur, on remplace le rond plein du slide précédent par un rond vide en manipulant la classe correspondante
-    circles[pointeur].classList.remove("la-dot-circle");
-    circles[pointeur].classList.add("la-circle");
+    toggleCircles(false);
 
     // On incrémente le tableau
     pointeur++;
@@ -68,8 +68,7 @@ function defiler() {
     diaporama.setAttribute("src", images[pointeur]);
 
     //Le pointeur étant à jour, on remplace le rond vide du slide présent par un rond plein en manipulant la classe correspondante
-    circles[pointeur].classList.remove("la-circle");
-    circles[pointeur].classList.add("la-dot-circle");
+    toggleCircles(true);
 }
 
 
@@ -77,11 +76,9 @@ function defiler() {
  * Faire reculer le diaporama d'une image
  */
 function defileMoins() {
-    //Collection des éléments ronds
-    let circles = document.querySelectorAll("section div:nth-of-type(2)>i");
-    //Avant que ne s'incrémente le pointeur, on remplace le rond plein du slide précédent par un rond vide en manipulant la classe correspondante
-    circles[pointeur].classList.remove("la-dot-circle");
-    circles[pointeur].classList.add("la-circle");
+
+    //Avant que ne décrémente le pointeur, on remplace le rond plein du slide précédent par un rond vide en manipulant la classe correspondante
+    toggleCircles(false);
 
     // On décrémente le tableau
     pointeur--;
@@ -95,6 +92,17 @@ function defileMoins() {
     diaporama.setAttribute("src", images[pointeur]);
 
     //Le pointeur étant à jour, on remplace le rond vide du slide présent par un rond plein en manipulant la classe correspondante
-    circles[pointeur].classList.remove("la-circle");
-    circles[pointeur].classList.add("la-dot-circle");
+    toggleCircles(true);
+}
+
+function toggleCircles(pointeurAJour) {
+    //Collection des éléments ronds
+    let circles = document.querySelectorAll("section div:nth-of-type(2)>i");
+    if (pointeurAJour == false) {
+        circles[pointeur].classList.remove("la-dot-circle");
+        circles[pointeur].classList.add("la-circle");
+    }else if(pointeurAJour == true){
+        circles[pointeur].classList.add("la-dot-circle");
+        circles[pointeur].classList.remove("la-circle");
+    }
 }
