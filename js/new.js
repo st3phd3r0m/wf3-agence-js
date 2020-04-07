@@ -41,7 +41,12 @@ function miseAJourCercle() {
     //Créer autant de cercles qu'il y a d'images
     for (let compteur = 0; compteur < images.length; compteur++) {
         let circle = document.createElement("i");
-        circle.classList.add("las", "la-circle");
+        if (compteur == 0) {
+            circle.classList.add("las", "la-dot-circle");
+        } else {
+            circle.classList.add("las", "la-circle");
+        }
+
         circleParent.appendChild(circle);
     }
 }
@@ -53,8 +58,11 @@ function miseAJourCercle() {
  */
 function defiler() {
 
+    //Collection des éléments ronds
+    let circles = document.querySelectorAll("section div:nth-of-type(2)>i");
+
     //Avant que ne s'incrémente le pointeur, on remplace le rond plein du slide précédent par un rond vide en manipulant la classe correspondante
-    toggleCircles(false);
+    circles[pointeur].classList.replace("la-dot-circle", "la-circle");
 
     // On incrémente le tableau
     pointeur++;
@@ -68,7 +76,7 @@ function defiler() {
     diaporama.setAttribute("src", images[pointeur]);
 
     //Le pointeur étant à jour, on remplace le rond vide du slide présent par un rond plein en manipulant la classe correspondante
-    toggleCircles(true);
+    circles[pointeur].classList.replace("la-circle", "la-dot-circle");
 }
 
 
@@ -77,8 +85,11 @@ function defiler() {
  */
 function defileMoins() {
 
+    //Collection des éléments ronds
+    let circles = document.querySelectorAll("section div:nth-of-type(2)>i");
+
     //Avant que ne décrémente le pointeur, on remplace le rond plein du slide précédent par un rond vide en manipulant la classe correspondante
-    toggleCircles(false);
+    circles[pointeur].classList.replace("la-dot-circle", "la-circle");
 
     // On décrémente le tableau
     pointeur--;
@@ -92,17 +103,5 @@ function defileMoins() {
     diaporama.setAttribute("src", images[pointeur]);
 
     //Le pointeur étant à jour, on remplace le rond vide du slide présent par un rond plein en manipulant la classe correspondante
-    toggleCircles(true);
-}
-
-function toggleCircles(pointeurAJour) {
-    //Collection des éléments ronds
-    let circles = document.querySelectorAll("section div:nth-of-type(2)>i");
-    if (pointeurAJour == false) {
-        circles[pointeur].classList.remove("la-dot-circle");
-        circles[pointeur].classList.add("la-circle");
-    }else if(pointeurAJour == true){
-        circles[pointeur].classList.add("la-dot-circle");
-        circles[pointeur].classList.remove("la-circle");
-    }
+    circles[pointeur].classList.replace("la-circle", "la-dot-circle");
 }

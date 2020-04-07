@@ -251,8 +251,6 @@ body {
     }
 
     main {
-
-
         section {
             /* page About us */
             text-align: center;
@@ -372,6 +370,13 @@ body {
                         }
                     }
                 }
+
+                // @media screen and (min-width: 1200px){
+                //     width: 1020px;
+                //     margin:auto;
+                // }
+
+
             }
 
             @media screen and (min-width: 768px) {
@@ -428,7 +433,7 @@ body {
                         position: absolute;
                         bottom: 0;
                         left: 50%;
-                        width: 80%;
+                        width: 1020px;
                         transform: translateX(-50%);
                     }
 
