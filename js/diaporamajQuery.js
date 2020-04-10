@@ -14,7 +14,7 @@ $(function () {
     miseAJourCercle();
 
     //Lancement diaporama
-    period = 1000;
+    period = 5000;
     interval = setInterval(defiler, period);
 
     //Ecouteur d'évenement pour interrompre le diaporama 
@@ -52,21 +52,34 @@ function defiler() {
     //Collection des éléments ronds
     let circles = $("section div:nth-of-type(2)>i");
 
-    //Avant que ne s'incrémente le pointeur, on remplace le rond plein du slide précédent par un rond vide en manipulant la classe correspondante
-    $(circles[pointeur]).removeClass("la-dot-circle").addClass("la-circle");
-    circles[pointeur].classList.replace("la-dot-circle","la-circle");
-    // On incrémente le tableau
-    pointeur++;
-    // Si le pointeur dépasse le bout du tableau
-    if (pointeur == images.length) {
-        // on réinitialise le pointeur
-        pointeur = 0;
-    }
-    //Récupération noeud correspondant au diaporama : on va chercher l'image
-    $("header>section>img").attr("src", images[pointeur]);
 
-    //Le pointeur étant à jour, on remplace le rond vide du slide présent par un rond plein en manipulant la classe correspondante
-    circles[pointeur].classList.replace("la-circle","la-dot-circle");
+    $("header>section").addClass("diapo-black");
+    //fondu sortant
+    $("header>section>img").fadeOut(period/4,function(){
+        //Avant que ne s'incrémente le pointeur, on remplace le rond plein du slide précédent par un rond vide en manipulant la classe correspondante
+        // $(circles[pointeur]).removeClass("la-dot-circle").addClass("la-circle");
+        circles[pointeur].classList.replace("la-dot-circle", "la-circle");
+
+        // On incrémente le tableau
+        pointeur++;
+        // Si le pointeur dépasse le bout du tableau
+        if (pointeur == images.length) {
+            // on réinitialise le pointeur
+            pointeur = 0;
+        }
+
+        //Récupération noeud correspondant au diaporama : on va chercher l'image
+        $("header>section>img").attr("src", images[pointeur]);
+        //Le pointeur étant à jour, on remplace le rond vide du slide présent par un rond plein en manipulant la classe correspondante
+        circles[pointeur].classList.replace("la-circle", "la-dot-circle");
+        $("header>section>img").fadeIn(period/4); 
+        
+        $("header>section").removeClass("diapo-black");
+    });
+
+   
+
+
 }
 
 function defileMoins() {
@@ -91,10 +104,10 @@ function defileMoins() {
     $(circles[pointeur]).removeClass("la-circle").addClass("la-dot-circle");
 }
 
-function arretDefile(){
+function arretDefile() {
     clearInterval(interval);
 }
 
-function repriseDefile(){
+function repriseDefile() {
     interval = setInterval(defiler, period);
 }

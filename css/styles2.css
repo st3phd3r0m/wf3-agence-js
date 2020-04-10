@@ -1,0 +1,239 @@
+@charset "UTF-8";
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  /* Compense la ligne blanche en bas des images */
+  /* Vue tablette */
+}
+
+body img {
+  vertical-align: middle;
+}
+
+body header section {
+  text-align: center;
+  position: relative;
+  color: white;
+  -webkit-transition: color 1s;
+  transition: color 1s;
+  /* Flèche gauche */
+  /* Flèche droite */
+}
+
+body header section .diapo-black {
+  color: black !important;
+  -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+body header section img {
+  width: 100%;
+}
+
+body header section .la-chevron-left {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 3em;
+}
+
+body header section .la-chevron-right {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 3em;
+}
+
+body header section div h1,
+body header section div h2,
+body header section div a {
+  display: none;
+}
+
+body header section div:first-of-type {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* Animation globe */
+}
+
+body header section div:first-of-type .la-globe {
+  font-size: 200px;
+  -webkit-animation: tourne 20s linear infinite, couleurs 15s infinite;
+          animation: tourne 20s linear infinite, couleurs 15s infinite;
+}
+
+@-webkit-keyframes tourne {
+  from {
+    /* on peu écrire 0% */
+    /* Etat initial: on n'a pas tourné */
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    /* on peu écrire 100% */
+    /* Etat final : on a fait un tour complet */
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes tourne {
+  from {
+    /* on peu écrire 0% */
+    /* Etat initial: on n'a pas tourné */
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    /* on peu écrire 100% */
+    /* Etat final : on a fait un tour complet */
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes couleur {
+  0% {
+    color: red;
+  }
+  33% {
+    color: green;
+  }
+  66% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@keyframes couleur {
+  0% {
+    color: red;
+  }
+  33% {
+    color: green;
+  }
+  66% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
+}
+
+body header section div:last-of-type {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+body header nav {
+  color: white;
+  background-color: #0fcabf;
+  padding: 36px;
+  text-align: center;
+}
+
+body header nav h1 {
+  font-family: "Paytone One", sans-serif;
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+body header nav select {
+  height: 30px;
+  width: 100%;
+  border: none;
+}
+
+body header nav ul {
+  display: none;
+}
+
+body main > section:first-of-type {
+  text-align: center;
+  padding: 36px;
+}
+
+body main > section:first-of-type h1 {
+  position: relative;
+  display: inline-block;
+}
+
+body main > section:first-of-type p {
+  text-align: left;
+  position: relative;
+}
+
+body main > section:first-of-type > div aside .bar {
+  background: repeating-linear-gradient(45deg, white, lightgrey 1%);
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+body main > section:first-of-type > div aside .bar span {
+  display: none;
+}
+
+body main > section:first-of-type > div aside .bar .jaune {
+  width: calc(54% - 20px);
+  /* Calcule les 54% en prenant en compte les 20px de padding*/
+  background-color: #f5ce55;
+}
+
+body main > section:first-of-type > div aside .bar .orange {
+  width: calc(73% - 20px);
+  background-color: #fb8c32;
+}
+
+body main > section:first-of-type > div aside .bar .bleu {
+  width: calc(87% - 20px);
+  background-color: #58cee8;
+}
+
+body main > section:first-of-type > div aside .bar .jaune,
+body main > section:first-of-type > div aside .bar .bleu,
+body main > section:first-of-type > div aside .bar .orange {
+  padding: 10px;
+}
+
+body main > section:nth-of-type(2) {
+  text-align: center;
+  padding: 36px 36px 0 36px;
+  padding-bottom: 0 !important;
+  background: url("../images/parallax_01.jpg") center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+body main > section:nth-of-type(2) img {
+  width: 100%;
+}
+
+body footer {
+  text-align: center;
+}
+
+body footer a[href*="facebook.com"] {
+  font-size: 3em;
+  color: #3b5998;
+}
+
+body footer [href*="twitter.com"] {
+  font-size: 3em;
+  color: #00acee;
+}
+/*# sourceMappingURL=styles2.css.map */
