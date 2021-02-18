@@ -14,7 +14,7 @@ $(function () {
     miseAJourCercle();
 
     //Lancement diaporama
-    period = 5000;
+    period = 10000;
     interval = setInterval(defiler, period);
 
     //Ecouteur d'évenement pour interrompre le diaporama 
@@ -55,7 +55,7 @@ function defiler() {
 
     $("header>section").addClass("diapo-black");
     //fondu sortant
-    $("header>section>img").fadeOut(period/4,function(){
+    $("header>section>img").fadeOut(period/10,function(){
         //Avant que ne s'incrémente le pointeur, on remplace le rond plein du slide précédent par un rond vide en manipulant la classe correspondante
         // $(circles[pointeur]).removeClass("la-dot-circle").addClass("la-circle");
         circles[pointeur].classList.replace("la-dot-circle", "la-circle");

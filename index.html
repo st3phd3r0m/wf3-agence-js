@@ -281,13 +281,15 @@
         <section id="contacts">
             <h1>Contact form</h1>
             <form action="#">
-                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input type="text" name="name" placeholder="Name">
                 <span></span>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Phone" required>
+                <input type="tel" name="phone" placeholder="Phone">
                 <span></span>
-                <input type="email" id="courriel" name="courriel" placeholder="Email" required>
+                <input type="email" name="email" placeholder="Email">
                 <span></span>
-                <textarea id="message" placeholder="Message" required></textarea>
+                <input type="email" name="email2" placeholder="Email2">
+                <span></span>
+                <textarea placeholder="Message" name="message"></textarea>
                 <span></span>
                 <button type="submit">Send</button>
             </form>
@@ -320,8 +322,10 @@
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/diaporamajQuery.js"></script>
+    <script src="js/formulaire.js"></script>
     <script src="js/socialNetWorkLink.js"></script>
     <script src="js/scroll.js"></script>
+
 </body>
 
 </html>

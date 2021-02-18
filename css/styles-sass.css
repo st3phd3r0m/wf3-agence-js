@@ -1,31 +1,20 @@
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  /* Compense la ligne blanche en bas des images */
-  /* Header ------------------------------------------------------------*/
-  /* Bas de page */
-  /*Header Vue tablette*/
-  /*fin vue tablette*/
-  /*Vue ordi*/
-  /*Fin vue ordi*/
 }
 
 body img {
   vertical-align: middle;
 }
 
-body header {
-  /* Navigation */
-}
-
 body header .diapo-black {
-  color: black;
+  color: rgba(0, 0, 0, 0.514);
   -webkit-transition: color 1s;
   transition: color 1s;
 }
 
 body header section {
-  color: white;
+  color: #e9e9e9;
   -webkit-transition: color 1s;
   transition: color 1s;
   text-align: center;
@@ -68,8 +57,8 @@ body header section div:first-of-type {
 body header section div:first-of-type .la-globe {
   font-weight: 700;
   font-size: 135px;
-  -webkit-animation: tourne 15s linear infinite, couleur 5s infinite;
-          animation: tourne 15s linear infinite, couleur 5s infinite;
+  -webkit-animation: tourne 15s linear infinite;
+          animation: tourne 15s linear infinite;
 }
 
 @-webkit-keyframes tourne {
@@ -99,36 +88,6 @@ body header section div:first-of-type .la-globe {
     -webkit-transform: rotateZ(360deg);
             transform: rotateZ(360deg);
     /* Standard syntax */
-  }
-}
-
-@-webkit-keyframes couleur {
-  0% {
-    color: red;
-  }
-  33% {
-    color: green;
-  }
-  66% {
-    color: blue;
-  }
-  100% {
-    color: red;
-  }
-}
-
-@keyframes couleur {
-  0% {
-    color: red;
-  }
-  33% {
-    color: green;
-  }
-  66% {
-    color: blue;
-  }
-  100% {
-    color: red;
   }
 }
 
@@ -190,15 +149,6 @@ body > a .la-angle-double-up {
 body > a .la-angle-double-up:hover {
   -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.534);
           box-shadow: 0 0 10px rgba(128, 128, 128, 0.534);
-}
-
-body main {
-  /* page About us */
-  /* Page Why choose us */
-  /* Page Robert Adams */
-  /* Services */
-  /* Page Our news */
-  /* Page contacts */
 }
 
 body main section:first-of-type {
@@ -449,27 +399,27 @@ body main section:nth-of-type(6) h1 {
   margin-bottom: 50px;
 }
 
+body main section:nth-of-type(6) form input, body main section:nth-of-type(6) form textarea, body main section:nth-of-type(6) form button {
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+}
+
 body main section:nth-of-type(6) form input,
 body main section:nth-of-type(6) form textarea {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 100%;
-  border: none;
   margin-top: 2px;
   margin-bottom: 2px;
   padding: 20px;
-  text-transform: uppercase;
   color: rgba(0, 0, 0, 0.4);
 }
 
 body main section:nth-of-type(6) form button {
-  border: none;
   background-color: #217e79;
   color: white;
-  width: 100%;
   height: 4rem;
   font-size: 0.9rem;
-  text-transform: uppercase;
   font-weight: 900;
   margin-top: 2px;
 }
@@ -522,14 +472,7 @@ body > footer a[href*='twitter.com'] {
   body header nav select {
     display: none;
   }
-  body main {
-    /* page About us */
-    /*Why choose us*/
-    /*Robert Adams*/
-    /*Services*/
-    /* Page Our news */
-    /*Contact*/
-  }
+
   body main section:first-of-type {
     padding: 10px;
   }
@@ -673,14 +616,7 @@ body > footer a[href*='twitter.com'] {
     width: 50%;
     margin: auto;
   }
-  body main {
-    /* page About us */
-    /*Why choose us*/
-    /*Robert Adams*/
-    /*Services*/
-    /* Page Our news */
-    /*Contact*/
-  }
+
   body main section:first-of-type {
     padding: 0 10% 0 10%;
   }

@@ -1,30 +1,24 @@
 //Attente chargement page web
 window.onload = () => {
 
-    // Aller dans 
-    // if (document.getElementById("contactEntrance") != null) {
-    //     let navToContact = document.getElementById("contactEntrance");
-    //     navToContact.addEventListener("click", goToContact);
-    // }
-
-
     let homeArrow = document.getElementById("scroll");
     homeArrow.addEventListener("click", goToHomeSite);
 
-
-
+    let navTo = document.querySelectorAll("header>nav>ul a");
+    for(let compt = 0; compt<navTo.length; compt++){
+        navTo[compt].addEventListener("click", goTo);
+    }
+    
 } // Fin windows.onload
 
-// function goToContact() {
-//     let contactPosition = document.getElementById("contact");
-//     console.log(contactPosition);
-//     contactPosition = contactPosition.offsetTop;
-//     console.log(contactPosition);
-//     window.scrollTo({left : 0, top: contactPosition, behavior: 'smooth'});
-// }
+function goTo(event){
+    event.preventDefault();
+    let targetPosition = event.target.getAttribute("href");
+    targetPosition = document.querySelector(targetPosition).offsetTop;
+    window.scrollTo({left : 0, top: targetPosition, behavior: 'smooth'});
+}
 
-function goToHomeSite(event) {
-    
+function goToHomeSite(event){
     event.preventDefault();
     window.scrollTo({
         top: 0,
