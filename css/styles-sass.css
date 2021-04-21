@@ -1,10 +1,21 @@
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
+  /* Compense la ligne blanche en bas des images */
+  /* Header ------------------------------------------------------------*/
+  /* Bas de page */
+  /*Header Vue tablette*/
+  /*fin vue tablette*/
+  /*Vue ordi*/
+  /*Fin vue ordi*/
 }
 
 body img {
   vertical-align: middle;
+}
+
+body header {
+  /* Navigation */
 }
 
 body header .diapo-black {
@@ -131,8 +142,7 @@ body header nav select {
 }
 
 body > a {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 95%;
   left: 93%;
   z-index: 1;
@@ -149,6 +159,15 @@ body > a .la-angle-double-up {
 body > a .la-angle-double-up:hover {
   -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.534);
           box-shadow: 0 0 10px rgba(128, 128, 128, 0.534);
+}
+
+body main {
+  /* page About us */
+  /* Page Why choose us */
+  /* Page Robert Adams */
+  /* Services */
+  /* Page Our news */
+  /* Page contacts */
 }
 
 body main section:first-of-type {
@@ -472,7 +491,14 @@ body > footer a[href*='twitter.com'] {
   body header nav select {
     display: none;
   }
-
+  body main {
+    /* page About us */
+    /*Why choose us*/
+    /*Robert Adams*/
+    /*Services*/
+    /* Page Our news */
+    /*Contact*/
+  }
   body main section:first-of-type {
     padding: 10px;
   }
@@ -616,7 +642,14 @@ body > footer a[href*='twitter.com'] {
     width: 50%;
     margin: auto;
   }
-
+  body main {
+    /* page About us */
+    /*Why choose us*/
+    /*Robert Adams*/
+    /*Services*/
+    /* Page Our news */
+    /*Contact*/
+  }
   body main section:first-of-type {
     padding: 0 10% 0 10%;
   }
